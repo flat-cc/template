@@ -1,59 +1,84 @@
 {
-  "name": "templates",
-	"displayName": "Templates",
-	"description": "Quickly create files and folders based on the template",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.69.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-        "onCommand:templates.helloWorld"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"commands": [
+  "name": "gtemplate",
+  "displayName": "GTemplate",
+  "description": "template 模板 快捷 better template",
+  "version": "1.0.1",
+  "publisher": "hyc15669028801",
+  "author": {
+    "name": "hyc",
+    "url": "https://github.com/flat-cc"
+  },
+  "icon": "media/logo.png",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:gtemplate.createTemplate",
+		"onCommand:gtemplate.createTemplateFolder"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gtemplate.createTemplate",
+        "title": "新建模板"
+      },
 			{
-				"command": "extension.sayHello",
-				"title": "Hello World"
-			}
-		],
-		"menus": {
-			"commandPalette": [
+        "command": "gtemplate.createTemplateFolder",
+        "title": "新建模板文件夹"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "gtemplate.createTemplate",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        },
 				{
-					"command": "extension.sayHello",
-					"when": "editorHasSelection"
-				}
-			]
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"compile-tests": "tsc -p . --outDir out",
-		"watch-tests": "tsc -p . -w --outDir out",
-		"pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.69.0",
-		"@types/glob": "^7.2.0",
-		"@types/mocha": "^9.1.1",
-		"@types/node": "16.x",
-		"@typescript-eslint/eslint-plugin": "^5.30.0",
-		"@typescript-eslint/parser": "^5.30.0",
-		"eslint": "^8.18.0",
-		"glob": "^8.0.3",
-		"mocha": "^10.0.0",
-		"typescript": "^4.7.4",
-		"ts-loader": "^9.3.1",
-		"webpack": "^5.73.0",
-		"webpack-cli": "^4.10.0",
-		"@vscode/test-electron": "^2.1.5"
-	}
+          "command": "gtemplate.createTemplateFolder",
+          "group": "1_modification",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.69.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "ts-loader": "^9.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "@vscode/test-electron": "^2.1.5"
+  },
+  "bugs": {
+    "url": "https://github.com/flat-cc/template/issues"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/flat-cc/template"
+  },
+  "homepage": "https://github.com/flat-cc/template"
 }
