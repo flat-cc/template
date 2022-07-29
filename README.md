@@ -1,4 +1,4 @@
-# templates
+# GTemplates 
 
 一个vscode扩展插件，可快速复用项目中的文件或者文件夹~
 
@@ -16,6 +16,6 @@
 3. 在`.template`目录下创建常用的模板文件或者模板文件夹
 4. 在树形目录中右键选择“新建模板”或“新建模板文件夹”即可快速插入对应模板
 
-## ⚔ 演示
+## 🎥 演示
 
 ![2022-07-29-10-40-44.gif](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67e58777a23747e9b20b9214d94c48df~tplv-k3u1fbpfcp-watermark.image?)
